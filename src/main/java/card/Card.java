@@ -14,4 +14,8 @@ public class Card {
     public String toString() {
         return pattern.toString() + " " + number.getNumber();
     }
+
+    public Number getNumber() {
+        return number;
+    }
 }

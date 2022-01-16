@@ -4,6 +4,7 @@ import card.Deck;
 import gamePlayer.Dealer;
 import gamePlayer.Player;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -50,5 +51,25 @@ public class GamePlayerTest {
         while (!strings.isEmpty()) {
             System.out.println(strings.pop());
         }
+    }
+
+    @Test
+    public void dealer_draw_when_16_이하() throws Exception{
+        // given
+        Dealer dealer = new Dealer();
+        Deck deck = new Deck(CardFactory.generateDeck());
+
+        // when
+        dealer.draw(deck.pop());
+        dealer.draw(deck.pop());
+
+        dealer.sum();
+        if (dealer.isLessThan16()) {
+            dealer.draw(deck.pop());
+        }
+        // then
+        ArrayList<Card> card1 = dealer.getCard();
+        Assertions.assertEquals(3, card1.size());
+
     }
 }
