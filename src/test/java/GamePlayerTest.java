@@ -18,8 +18,8 @@ public class GamePlayerTest {
     @Test
     public void player_draw_card() throws Exception {
         // given
-        Player player = new Player();
-        Dealer dealer = new Dealer();
+        Player player = new Player("chang");
+        Dealer dealer = new Dealer("dealer");
         Deck deck = new Deck(CardFactory.generateDeck());
 
         // when
@@ -56,7 +56,7 @@ public class GamePlayerTest {
     @Test
     public void dealer_draw_when_16_이하() throws Exception{
         // given
-        Dealer dealer = new Dealer();
+        Dealer dealer = new Dealer("dealer");
         Deck deck = new Deck(CardFactory.generateDeck());
 
         // when

@@ -5,8 +5,13 @@ import card.Card;
 import java.util.ArrayList;
 
 public abstract class GamePlayer {
-    ArrayList<Card> cards = new ArrayList<>();
-    int count = 0;
+    protected ArrayList<Card> cards = new ArrayList<>();
+    protected String name;
+    protected int count = 0;
+
+    public GamePlayer(String name) {
+        this.name = name;
+    }
 
     public void draw(Card card) {
         cards.add(card);
@@ -16,9 +21,14 @@ public abstract class GamePlayer {
         return cards;
     }
 
-    public void sum() {
+    public int sum() {
         for (Card card : cards) {
             count += card.getNumber().getNumber();
         }
+        return count;
+    }
+
+    public String getName() {
+        return name;
     }
 }
