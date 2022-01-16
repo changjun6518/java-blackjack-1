@@ -1,15 +1,20 @@
 package card;
 
 import java.util.List;
+import java.util.Stack;
 
 public class Deck {
-    private final List<Card> cardList;
+    private final Stack<Card> cardList;
 
-    public Deck(List<Card> cardList) {
+    public Deck(Stack<Card> cardList) {
         this.cardList = cardList;
     }
 
-    public List<Card> getCardList() {
+    public Stack<Card> getCardList() {
         return cardList;
+    }
+
+    public Card pop() {
+        return cardList.pop();
     }
 }
