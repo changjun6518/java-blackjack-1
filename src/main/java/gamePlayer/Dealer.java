@@ -6,6 +6,7 @@ public class Dealer extends GamePlayer {
     }
 
     public boolean isLessThan16() {
+        sum();
         return count <= 16;
     }
 }

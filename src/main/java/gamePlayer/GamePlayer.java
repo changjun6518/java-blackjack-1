@@ -22,6 +22,7 @@ public abstract class GamePlayer {
     }
 
     public int sum() {
+        count = 0;
         for (Card card : cards) {
             count += card.getNumber().getNumber();
         }

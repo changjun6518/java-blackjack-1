@@ -5,6 +5,7 @@ import gamePlayer.GamePlayer;
 import gamePlayer.Player;
 import org.junit.jupiter.api.Test;
 import util.Calculator;
+import util.OutputView;
 
 import java.util.List;
 
@@ -32,13 +33,7 @@ public class CalculatorTest {
 
         // then
         List<GamePlayer> winner = calculator.decideWinner(player, dealer);
-        if (winner.isEmpty()) {
-            System.out.println("승자가 없습니다");
-        }
-        if (winner.size() == 2) {
-            System.out.println("동점입니다!");
-        }
-        System.out.println(winner.get(0).getName() + " 이 승리하였습니다");
+        OutputView.printResult(winner);
 
     }
 }
